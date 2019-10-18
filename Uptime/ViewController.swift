@@ -109,7 +109,7 @@ class ViewController: NSViewController {
         }
         
         //let loadsArr = loads.components(separatedBy: " ")
-        var usersArr = users.components(separatedBy: " ")
+        let usersArr = users.components(separatedBy: " ")
         var loadsArr = loads.components(separatedBy: " ")
         loadsArr[5] = loadsArr[5].trimmingCharacters(in: CharacterSet.newlines)
         
