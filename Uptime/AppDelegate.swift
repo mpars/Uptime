@@ -42,12 +42,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate{
         
         if let button = statusItem.button {
             button.action = #selector(AppDelegate.togglePopover(_:))
+           
         }
         
         
         let mainViewController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "popUpViewController") as! ViewController
         
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(AppDelegate.uptime), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(AppDelegate.uptime), userInfo: nil, repeats: true)
+        self.uptime()
         
         popover.contentViewController = mainViewController
         

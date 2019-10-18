@@ -113,7 +113,7 @@ class ViewController: NSViewController {
         var loadsArr = loads.components(separatedBy: " ")
         loadsArr[5] = loadsArr[5].trimmingCharacters(in: CharacterSet.newlines)
         
-        fullUptimeInfo.string = sedOutput + usersArr[1] + " users logged in" + "\nLoad averages \n" + loadsArr[3] + "\t - 1 min\n" + loadsArr[4] + "\t - 5 mins\n" + loadsArr[5] + "\t - 15 mins"
+        fullUptimeInfo.string = sedOutput + usersArr[1] + " users logged in" + "\nLoad averages \n1 min:\t" + loadsArr[3] + "\n5 min:\t" + loadsArr[4] + "\n15 mins:\t" + loadsArr[5]
     }
     
     
