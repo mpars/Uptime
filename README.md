@@ -1,2 +1,2 @@
 # Uptime
-Macos status item for displaying computer uptime
+OSX status item for displaying computer uptime written in swift 5
