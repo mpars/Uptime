@@ -21,21 +21,23 @@ class ViewController: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        
         getMoreUptimeInfo()
+        //setup timer for uptime info refresh
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getMoreUptimeInfo), userInfo: nil, repeats: true)
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setup timer for uptime info refresh
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getMoreUptimeInfo), userInfo: nil, repeats: true)
-        
         fullUptimeInfo.font = NSFont.systemFont(ofSize: 13)
         optionsMenuButton.menu = optionsMenu
 
     }
     override func viewWillDisappear() {
-      
+        // invalidate timer on view disappearing
+        timer.invalidate()
     }
     override var representedObject: Any? {
         didSet {
