@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -664,74 +665,101 @@
             <objects>
                 <viewController storyboardIdentifier="popUpViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Uptime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="211" height="163"/>
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="153"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-tc-38i">
-                                <rect key="frame" x="20" y="17" width="171" height="99"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="6jh-Wf-gDL">
-                                    <rect key="frame" x="0.0" y="0.0" width="171" height="99"/>
+                            <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-tc-38i">
+                                <rect key="frame" x="0.0" y="0.0" width="181" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="6jh-Wf-gDL">
+                                    <rect key="frame" x="0.0" y="0.0" width="181" height="117"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" id="oML-nU-uU2">
-                                            <rect key="frame" x="0.0" y="0.0" width="171" height="99"/>
+                                        <textView ambiguous="YES" editable="NO" selectable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="oML-nU-uU2">
+                                            <rect key="frame" x="0.0" y="0.0" width="181" height="117"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="171" height="99"/>
-                                            <size key="maxSize" width="240" height="10000000"/>
-                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" red="0.0" green="0.90588235294117647" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="181" height="117"/>
+                                            <size key="maxSize" width="250" height="10000000"/>
+                                            <color key="insertionPointColor" red="0.0" green="0.90591989436619713" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </textView>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Rlh-8E-DFM">
                                     <rect key="frame" x="-100" y="-100" width="240" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="t1v-O3-2X1">
-                                    <rect key="frame" x="155" y="0.0" width="16" height="99"/>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="t1v-O3-2X1">
+                                    <rect key="frame" x="164" y="1" width="16" height="115"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FGo-zu-7wp">
-                                <rect key="frame" x="175" y="124" width="16" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="24" id="L4Z-nl-Vve"/>
-                                    <constraint firstAttribute="height" constant="23" id="QQF-Th-e86"/>
-                                </constraints>
-                                <buttonCell key="cell" type="roundTextured" title="..." bezelStyle="texturedRounded" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="HaI-45-n5t">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNC-M6-DO4">
+                                <rect key="frame" x="6" y="123" width="32" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="office-calendar" imagePosition="only" alignment="center" controlSize="small" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="fZ3-Bb-I7O">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="uptimeMenuItemClicked:" target="XfG-lQ-9wD" id="ADm-E1-d1E"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRi-fk-PHi">
+                                <rect key="frame" x="44" y="125" width="24" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="view-refresh" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Jn9-qV-YH1">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="optionsMenuButtonClicked:" target="XfG-lQ-9wD" id="QRX-ao-o9z"/>
+                                    <action selector="rebootsItemClicked:" target="XfG-lQ-9wD" id="XLw-Qf-Gip"/>
                                 </connections>
                             </button>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lSn-aQ-aAA">
-                                <rect key="frame" x="18" y="126" width="63" height="17"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="↑ Uptime" id="cbX-0u-6zr">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-1M-SIw">
+                                <rect key="frame" x="76" y="124" width="27" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="process-stop" imagePosition="only" alignment="center" controlSize="small" imageScaling="proportionallyUpOrDown" inset="2" id="xIm-La-lBU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="shutdownsItemClicked:" target="XfG-lQ-9wD" id="dnU-Oi-1EH"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="psh-de-J7m">
+                                <rect key="frame" x="111" y="122" width="29" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="cs-notifications" imagePosition="only" alignment="center" controlSize="small" imageScaling="proportionallyUpOrDown" inset="2" id="70a-63-2fi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="aboutButtonClicked:" target="XfG-lQ-9wD" id="Wev-zE-EMU"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MYT-rZ-JF6">
+                                <rect key="frame" x="147" y="125" width="27" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="smallSquare" title="⌘Q" bezelStyle="smallSquare" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="bho-00-Ivr">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="quitButtonClicked:" target="XfG-lQ-9wD" id="ITZ-hx-ov3"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="FGo-zu-7wp" firstAttribute="trailing" secondItem="Rdy-tc-38i" secondAttribute="trailing" id="1fa-E0-SGU"/>
-                            <constraint firstItem="lSn-aQ-aAA" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="FsC-aX-V2z"/>
-                            <constraint firstItem="lSn-aQ-aAA" firstAttribute="leading" secondItem="Rdy-tc-38i" secondAttribute="leading" id="Gxw-DH-XLG"/>
-                            <constraint firstItem="FGo-zu-7wp" firstAttribute="leading" secondItem="lSn-aQ-aAA" secondAttribute="trailing" constant="96" id="Jwq-ka-ULb"/>
-                            <constraint firstItem="Rdy-tc-38i" firstAttribute="top" secondItem="FGo-zu-7wp" secondAttribute="bottom" constant="8" id="MUY-mN-jcc"/>
-                            <constraint firstAttribute="bottom" secondItem="Rdy-tc-38i" secondAttribute="bottom" constant="17" id="mj9-hl-3XT"/>
-                            <constraint firstItem="FGo-zu-7wp" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="pwy-CN-ZQc"/>
-                            <constraint firstItem="Rdy-tc-38i" firstAttribute="top" secondItem="FGo-zu-7wp" secondAttribute="bottom" constant="8" symbolic="YES" id="qV6-0Y-Ozg"/>
-                            <constraint firstAttribute="trailing" secondItem="FGo-zu-7wp" secondAttribute="trailing" constant="20" symbolic="YES" id="rf4-v8-OMV"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="aboutButton" destination="psh-de-J7m" id="RO0-q1-Q1b"/>
                         <outlet property="fullUptimeInfo" destination="oML-nU-uU2" id="jLD-He-3Jj"/>
                         <outlet property="optionsMenu" destination="yOi-CH-e0o" id="2jI-us-OWq"/>
-                        <outlet property="optionsMenuButton" destination="FGo-zu-7wp" id="9ZH-Tr-O9K"/>
+                        <outlet property="rebootsButton" destination="aRi-fk-PHi" id="9SY-i8-G0b"/>
+                        <outlet property="shutdownsButton" destination="B1D-1M-SIw" id="I1M-BJ-wGz"/>
+                        <outlet property="uptimeButton" destination="SNC-M6-DO4" id="wXf-7Q-NN9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -771,7 +799,13 @@
                     </items>
                 </menu>
             </objects>
-            <point key="canvasLocation" x="-59.5" y="220.5"/>
+            <point key="canvasLocation" x="-74.5" y="215.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cs-notifications" width="64" height="64"/>
+        <image name="office-calendar" width="64" height="64"/>
+        <image name="process-stop" width="64" height="64"/>
+        <image name="view-refresh" width="64" height="64"/>
+    </resources>
 </document>

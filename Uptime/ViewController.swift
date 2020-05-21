@@ -16,28 +16,30 @@ class ViewController: NSViewController {
     @IBOutlet weak var optionsMenuButton: NSButton!
     @IBOutlet var fullUptimeInfo: NSTextView!
     @IBOutlet var optionsMenu: NSMenu!
+    @IBOutlet weak var uptimeButton: NSButton!
+    @IBOutlet weak var rebootsButton: NSButton!
+    @IBOutlet weak var shutdownsButton: NSButton!
+    @IBOutlet weak var aboutButton: NSButton!
     
     var timer = Timer()
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        
         getMoreUptimeInfo()
-        //setup timer for uptime info refresh
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getMoreUptimeInfo), userInfo: nil, repeats: true)
-        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setup timer for uptime info refresh
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.getMoreUptimeInfo), userInfo: nil, repeats: true)
+        
         fullUptimeInfo.font = NSFont.systemFont(ofSize: 13)
-        optionsMenuButton.menu = optionsMenu
+        //optionsMenuButton.menu = optionsMenu
 
     }
     override func viewWillDisappear() {
-        // invalidate timer on view disappearing
-        timer.invalidate()
+      
     }
     override var representedObject: Any? {
         didSet {
@@ -48,17 +50,17 @@ class ViewController: NSViewController {
         optionsMenu.popUp(positioning: optionsMenu.item(at: 0), at: NSEvent.mouseLocation, in: nil)
 
     }
-    @IBAction func quitButtonClicked(_ sender: NSMenu) {
+    @IBAction func quitButtonClicked(_ sender: Any) {
         NSApplication.shared.terminate(self)
     }
     
-    @IBAction func aboutButtonClicked(_ sender: NSMenu) {
+    @IBAction func aboutButtonClicked(_ sender: Any) {
             timer.invalidate()
-            fullUptimeInfo.string = "Uptime v0.0.5\ngithub.com/mpars/uptime \n(c) 2019 Mark Parsons\n\nReleased under an MIT License"
+            fullUptimeInfo.string = "↑\nUptime v0.0.5\ngithub.com/mpars/uptime \n(c) 2019 Mark Parsons\n\nReleased under an MIT License"
         
     }
         
-        @IBAction func uptimeMenuItemClicked(_ sender: NSMenu) {
+        @IBAction func uptimeMenuItemClicked(_ sender: Any) {
            getMoreUptimeInfo()
         // Start timer again
             fullUptimeInfo.font = NSFont.systemFont(ofSize: 13)
@@ -69,7 +71,7 @@ class ViewController: NSViewController {
         
     }
     
-    @IBAction func shutdownsItemClicked(_ sender: NSMenu) {
+    @IBAction func shutdownsItemClicked(_ sender: Any) {
         // sed 's/\( \)*/\1/g'  -- replaces multiple spaces with single space
         var shutdownOutput = shellCommands.uptimeDetail(command: "last shutdown | sed 's/\\( \\)*/\\1/g'")
         if timer.isValid {
@@ -80,7 +82,7 @@ class ViewController: NSViewController {
         
     }
     
-    @IBAction func rebootsItemClicked(_ sender: NSMenu) {
+    @IBAction func rebootsItemClicked(_ sender: Any) {
         var rebootOutput = shellCommands.uptimeDetail(command: "last reboot | sed 's/\\( \\)*/\\1/g'")
         if timer.isValid {
             timer.invalidate()
@@ -111,11 +113,11 @@ class ViewController: NSViewController {
         }
         
         //let loadsArr = loads.components(separatedBy: " ")
-        let usersArr = users.components(separatedBy: " ")
+        var usersArr = users.components(separatedBy: " ")
         var loadsArr = loads.components(separatedBy: " ")
         loadsArr[5] = loadsArr[5].trimmingCharacters(in: CharacterSet.newlines)
         
-        fullUptimeInfo.string = sedOutput + usersArr[1] + " users logged in" + "\nLoad averages \n1 min:\t" + loadsArr[3] + "\n5 min:\t" + loadsArr[4] + "\n15 mins:\t" + loadsArr[5]
+        fullUptimeInfo.string = sedOutput + usersArr[1] + " users logged in" + "\nLoad averages \n" + loadsArr[3] + "\t - 1 min\n" + loadsArr[4] + "\t - 5 mins\n" + loadsArr[5] + "\t - 15 mins"
     }
     
     
