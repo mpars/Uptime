@@ -756,48 +756,12 @@
                     <connections>
                         <outlet property="aboutButton" destination="psh-de-J7m" id="RO0-q1-Q1b"/>
                         <outlet property="fullUptimeInfo" destination="oML-nU-uU2" id="jLD-He-3Jj"/>
-                        <outlet property="optionsMenu" destination="yOi-CH-e0o" id="2jI-us-OWq"/>
                         <outlet property="rebootsButton" destination="aRi-fk-PHi" id="9SY-i8-G0b"/>
                         <outlet property="shutdownsButton" destination="B1D-1M-SIw" id="I1M-BJ-wGz"/>
                         <outlet property="uptimeButton" destination="SNC-M6-DO4" id="wXf-7Q-NN9"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <menu title="optionsMenu" id="yOi-CH-e0o">
-                    <items>
-                        <menuItem title="Uptime" id="Abv-WW-YsL">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="uptimeMenuItemClicked:" target="rPt-NT-nkU" id="DFh-HJ-gfn"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Shutdowns" id="ezr-vk-rWG">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="shutdownsItemClicked:" target="rPt-NT-nkU" id="BgB-3i-HXn"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Reboots" id="zHX-0J-7hK">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="rebootsItemClicked:" target="rPt-NT-nkU" id="h8S-gT-gW9"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem isSeparatorItem="YES" id="4rb-pU-rmr"/>
-                        <menuItem title="About" id="pJd-A7-eCh">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="aboutButtonClicked:" target="rPt-NT-nkU" id="kp6-95-eFY"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Quit" id="eUp-Eg-s3r">
-                            <modifierMask key="keyEquivalentModifierMask"/>
-                            <connections>
-                                <action selector="quitButtonClicked:" target="rPt-NT-nkU" id="BVD-xA-j7o"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
             </objects>
             <point key="canvasLocation" x="-74.5" y="215.5"/>
         </scene>

@@ -13,9 +13,9 @@ class ViewController: NSViewController {
     
     
 
-    @IBOutlet weak var optionsMenuButton: NSButton!
+    
     @IBOutlet var fullUptimeInfo: NSTextView!
-    @IBOutlet var optionsMenu: NSMenu!
+
     @IBOutlet weak var uptimeButton: NSButton!
     @IBOutlet weak var rebootsButton: NSButton!
     @IBOutlet weak var shutdownsButton: NSButton!
@@ -46,17 +46,14 @@ class ViewController: NSViewController {
         }
     }
 
-    @IBAction func optionsMenuButtonClicked(_ sender: Any) {
-        optionsMenu.popUp(positioning: optionsMenu.item(at: 0), at: NSEvent.mouseLocation, in: nil)
 
-    }
     @IBAction func quitButtonClicked(_ sender: Any) {
         NSApplication.shared.terminate(self)
     }
     
     @IBAction func aboutButtonClicked(_ sender: Any) {
             timer.invalidate()
-            fullUptimeInfo.string = "↑\nUptime v0.0.5\ngithub.com/mpars/uptime \n(c) 2019 Mark Parsons\n\nReleased under an MIT License"
+            fullUptimeInfo.string = "↑\nUptime v0.1.0\ngithub.com/mpars/uptime \n(c) 2019 Mark Parsons\n\nReleased under an MIT License \n--\nIcons created by dindin@G41T-R3 Released under a GNU GPL 3.0 licence. dindin_hernawan@yahoo.com"
         
     }
         
